@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PropertyHub</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>🏠 PropertyHub</h2>
+
+    <button onclick="showSection('view')" class="active">🏢 Properties</button>
+    <button onclick="showSection('add')">➕ Add</button>
+    <button onclick="showSection('payment')">💰 Payments</button>
+    <button onclick="showSection('complaint')">💬 Complaint</button>
+</div>
+
+<div class="main">
+
+<!-- VIEW -->
+<div id="view" class="section active">
+    <h2>All Properties</h2>
+    <div id="list" class="grid"></div>
+</div>
+
+<!-- ADD -->
+<div id="add" class="section form-card">
+    <h2>Add Property</h2>
+
+    <input id="title" placeholder="Title">
+    <input id="rent" placeholder="Rent">
+    <input id="image" placeholder="Image URL">
+    <input id="amenities" placeholder="Amenities">
+
+    <h3>Nearby</h3>
+    <input id="police" placeholder="Police Station">
+    <input id="hospital" placeholder="Hospital">
+    <input id="canteen" placeholder="Canteen">
+    <input id="food" placeholder="Food Items">
+
+    <button onclick="addProperty()">Add Property</button>
+</div>
+
+<!-- PAYMENT -->
+<div id="payment" class="section form-card">
+    <input id="payPid" placeholder="Property ID">
+    <input id="amount" placeholder="Amount">
+    <button onclick="addPayment()">Save</button>
+    <div id="paymentList"></div>
+</div>
+
+<!-- COMPLAINT -->
+<div id="complaint" class="section form-card">
+    <input id="cPid" placeholder="Property ID">
+    <input id="cMsg" placeholder="Message">
+    <button onclick="addComplaint()">Send</button>
+    <div id="complaintList"></div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

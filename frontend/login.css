@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:#020617;
+}
+
+/* animated background */
+body::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600");
+    background-size:cover;
+    animation:zoom 20s infinite alternate;
+    z-index:-1;
+}
+
+@keyframes zoom{
+    from{transform:scale(1);}
+    to{transform:scale(1.1);}
+}
+
+.box{
+    width:350px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    color:white;
+    animation:fade 1s;
+}
+
+@keyframes fade{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;}
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:12px 0;
+    border:none;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+input:focus{
+    transform:scale(1.05);
+    box-shadow:0 0 10px #9333ea;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(45deg,#6366f1,#9333ea);
+    color:white;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #9333ea;
+}
+
+a{color:#a855f7;}
